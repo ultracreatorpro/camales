@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página de películas</title>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1EWSVGSQCH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1EWSVGSQCH');
+</script>
+<style>
+    body {
+        background-color: #141414;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    /* Fondo con efecto nublado */
+    .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40%;
+        background: url('https://i.ibb.co/4pxs6b1/photo-5024024697733492809-y.jpg') no-repeat center center/cover;
+        filter: blur(2px) brightness(0.5);
+        z-index: -1;
+    }
+    .logo {
+        width: 150px;
+        margin: 20px;
+    }
+    .container {
+        text-align: center;
+        padding: 20px;
+    }
+    .title {
+        font-size: 1.5em;
+        margin-top: 40px;
+    }
+    .subtitle {
+        font-size: 1.2em;
+        margin-top: 10px;
+        color: #ccc;
+    }
+    .button {
+        background-color: #e50914;
+        color: #fff;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1em;
+        margin-top: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .button:hover {
+        background-color: #f40612;
+    }
+    .trending {
+        margin-top: 40px;
+        text-align: left;
+        padding-left: 20px;
+        font-size: 1em;
+    }
+    .gallery {
+        display: flex;
+        overflow-x: auto;
+        padding: 20px;
+        gap: 10px;
+    }
+    .gallery img {
+        width: 100px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .reasons {
+        margin-top: 40px;
+        text-align: left;
+        padding-left: 20px;
+        font-size: 1.2em;
+    }
+    .container-reasons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 20px;
+    }
+    .reason {
+        background-color: #0f072b;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 20px;
+        border: 2px solid #ffffff;
+        width: 90%;
+        max-width: 1200px;
+        color: #fff;
+    }
+    .reason-title {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+    .reason-subtitle {
+        font-size: 1em;
+        color: #ccc;
+    }
+    .icon {
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+    }
+    /* Estilos para Preguntas Frecuentes */
+.faq-container {
+    margin: 20px;
+    padding: 20px;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.faq-answer {
+    padding: 15px;
+    background-color: #222;
+    color: #ccc;
+    display: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+</style>
+</head>
+<body>
+
+<!-- Fondo nublado -->
+<div class="background"></div>
+
+<!-- Logo -->
+<img src="https://i.ibb.co/m4cQv09/20241115-020422-0000.png" alt="Logo" class="logo">
+
+<!-- Título y subtítulo -->
+<div class="container">
+    <h1 class="title">Películas y series ilimitadas y mucho más.</h1>
+    <h2 class="subtitle">Bienvenidos a una versión mod totalmente gratis</h2>
+    <button class="button" onclick="goToPeliculas()">Comenzar ></button>
+</div>
+
+<!-- Sección de tendencias -->
+<h2 class="trending">Tendencias</h2>
+<div class="gallery">
+    <img src="https://i.ibb.co/JyZZSJq/photo-5024024697733492818-x.jpg" alt="Imagen 1">
+    <img src="https://i.ibb.co/KKWc8Ly/photo-5024024697733492814-x.jpg" alt="Imagen 2">
+    <img src="https://i.ibb.co/tZJNL7B/photo-5024024697733492815-x.jpg" alt="Imagen 3">
+    <img src="https://i.ibb.co/3rGHYgQ/photo-5024024697733492816-x.jpg" alt="Imagen 4">
+    <img src="https://i.ibb.co/QDDCryc/photo-5024024697733492817-x.jpg" alt="Imagen 5">
+</div>
+
+<!-- Más motivos para unirte -->
+<h2 class="reasons">Más motivos para unirte</h2>
+<div class="container-reasons">
+    <div class="reason">
+        <h3 class="reason-title">Disfruta en tu TV</h3>
+        <p class="reason-subtitle">Ve en smart TV, PlayStation, Xbox, Chromecast, Apple TV, reproductores de Blu-ray y más.</p>
+        <img src="https://cdn-icons-png.flaticon.com/512/3159/3159543.png" alt="Icono 1" class="icon">
+    </div>
+    <div class="reason">
+        <h3 class="reason-title">Descarga tus series para verlas offline</h3>
+        <p class="reason-subtitle">Guarda tu contenido favorito y siempre tendrás algo para ver.</p>
+        <img src="https://cdn-icons-png.flaticon.com/512/2381/2381981.png" alt="Icono 2" class="icon">
+    </div>
+    <div class="reason">
+        <h3 class="reason-title">Disponible Offline</h3>
+        <p class="reason-subtitle">Películas y series ilimitadas en tu teléfono, tablet, laptop y TV.</p>
+        <img src="https://cdn-icons-png.flaticon.com/512/18094/18094046.png" alt="Icono 3" class="icon">
+    </div>
+    <div class="reason">
+        <h3 class="reason-title">Crea perfiles para niños</h3>
+        <p class="reason-subtitle">Los niños vivirán aventuras con sus personajes favoritos en un espacio diseñado exclusivamente para ellos, gratis con tu membresía.</p>
+        <img src="https://cdn-icons-png.flaticon.com/512/1211/1211015.png" alt="Icono 4" class="icon">
+    </div>
+</div>
+
+<!-- Sección de Preguntas Frecuentes -->
+<h2 class="reasons">Preguntas frecuentes</h2>
+<div class="faq-container">
+    <div class="faq-item">
+        <button class="faq-question">¿Qué es Netflix?</button>
+        <div class="faq-answer">Netflix es un servicio de streaming que ofrece una gran variedad de películas, series y documentales premiados en casi cualquier pantalla conectada a internet.
+
+Todo lo que quieras ver. Siempre hay algo nuevo por descubrir, ¡y todas las semanas se agregan más películas y series!</div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-question">¿Cuánto cuesta la membresía?</button>
+        <div class="faq-answer">Esta versión mod es completamente gratuita para fines educativos.</div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-question">¿Dónde puedo ver Netflix?</button>
+        <div class="faq-answer">Disfruta donde quieras, cuando quieras. Inicia sesión en tu cuenta de Netflix para ver contenido desde tu computadora personal o en cualquier dispositivo con conexión a internet que cuente con la app de Netflix, como smart TV, smartphones, tablets, reproductores multimedia y consolas de juegos.
+
+Además, puedes descargar tus series favoritas con la app para iOS o Android. Con la función de descarga, puedes ver contenido donde vayas y sin conexión a internet. Lleva Netflix contigo adonde sea.</div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-question">¿Qué puedo ver en Netflix?</button>
+        <div class="faq-answer">Netflix tiene un amplio catálogo de películas, series, documentales, animes, originales premiados y más. Todo lo que quieras ver, cuando quieras.</div>
+    </div>
+    <div class="faq-item">
+        <button class="faq-question">¿Cómo cancelo?</button>
+        <div class="faq-answer">Este Mod de Netflix es flexible. Sin contratos molestos ni compromisos.</div>
+    </div>
+</div>
+
+<div class="container">
+    <h1 class="title">¡Que comience la diversión!</h1>
+<button class="button" onclick="goToPeliculas()">Comenzar ></button>
+</div>
+
+<script>
+    function goToPeliculas() {
+        window.location.href = 'peliculas.html';
+    }
+
+// Función para manejar el acordeón
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach((question) => {
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+
+        // Alternar la visibilidad de la respuesta
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+        } else {
+            answer.style.display = 'block';
+        }
+    });
+});
+</script>
+
+</body>
+</html>
