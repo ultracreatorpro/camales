@@ -3,16 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Página de películas</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1EWSVGSQCH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1EWSVGSQCH');
-</script>
+<title>Caanales de Whatsapp</title>
 <style>
     body {
         background-color: #141414;
@@ -80,7 +71,66 @@
         height: 180px;
         object-fit: cover;
         border-radius: 10px;
-    }
+   }
+        /* Contenedor de búsqueda */
+        .search-container {
+            padding: 10px;
+            background-color: #e3e1e1;
+            text-align: center;
+        }
+        .search-container input {
+            padding: 10px;
+            width: 85%;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+        }
+        /* Tarjetas de juegos */
+        .cards {
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: flex-start;
+           max-width: 1000px; /* Puedes ajustar este ancho según tu diseño */
+           margin: 0 auto; /* Centra el contenedor */
+           padding: 10px;
+           gap: 10px;
+        }
+
+        .card {
+           background-color: #fff;
+           border: 1px solid #ddd;
+           border-radius: 5px;
+           width: calc(42% - 10px);
+           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+           padding: 15px;
+           text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+        .card h2 {
+            font-size: 14px;
+            color: #333;
+        }
+        .card h3 {
+            font-size: 13px;
+            color: #555;
+        }
+        .card p {
+            font-size: 12px;
+            color: #777;
+        }
+        .card button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     .reasons {
         margin-top: 40px;
         text-align: left;
@@ -165,6 +215,11 @@
     <button class="button" onclick="goToPeliculas()">Comenzar ></button>
 </div>
 
+    <!-- Contenedor de búsqueda -->
+    <div class="search-container">
+        <input type="text" placeholder="Buscar juegos...">
+    </div>
+
 <!-- Sección de tendencias -->
 <h2 class="trending">Tendencias</h2>
 <div class="gallery">
@@ -175,6 +230,26 @@
     <img src="https://i.ibb.co/QDDCryc/photo-5024024697733492817-x.jpg" alt="Imagen 5">
 </div>
 
+<!-- Tarjetas de juegos -->
+    <div class="cards">
+    <div class="card">
+        <img src="https://i.ibb.co/8x4wyKS/photo-5050966804243000741-m.jpg" alt="Robbery Bob">
+        <h2>Robbery Bob</h2>
+        <h3>💎 Monedas y dinero ilimitado</h3>
+        <p>V1.27.3</p>
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/003/355/389/small/five-5-star-rank-sign-illustration-free-vector.jpg" alt="Estrellas" style="width: 80px; margin: 0px auto;">
+        <button onclick="window.location.href='robbery.html'">Descargar</button>
+    </div>
+    <div class="card">
+        <img src="https://i.ibb.co/Wkh8mGM/photo-4997163117565816620-x.jpg" alt="Clash Royale">
+        <h2>Clash of Clans</h2>
+        <h3>💎 Monedas y gemas ilimitadas</h3>
+        <p>V16.386.9</p>
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/003/355/389/small/five-5-star-rank-sign-illustration-free-vector.jpg" alt="Estrellas" style="width: 80px; margin: 0px auto;">
+        <button onclick="window.location.href='clash.html'">Descargar</button>
+    </div>
+</div>
+    
 <!-- Más motivos para unirte -->
 <h2 class="reasons">Más motivos para unirte</h2>
 <div class="container-reasons">
@@ -235,6 +310,19 @@ Además, puedes descargar tus series favoritas con la app para iOS o Android. Co
 </div>
 
 <script>
+     document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.querySelector(".search-container input");
+        const cards = document.querySelectorAll(".card");
+
+        searchInput.addEventListener("input", function() {
+            const searchText = searchInput.value.toLowerCase();
+            cards.forEach(card => {
+                const title = card.querySelector("h2").textContent.toLowerCase();
+                card.style.display = title.includes(searchText) ? "block" : "none";
+            });
+        });
+    });
+    
     function goToPeliculas() {
         window.location.href = 'peliculas.html';
     }
