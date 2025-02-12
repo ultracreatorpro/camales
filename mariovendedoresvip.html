@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Encabezado */
+        header {
+            background-color: #28a745;
+            padding: 10px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        header h1 {
+            font-size: 20px;
+        }
+        .external-link-icon {
+            font-size: 24px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+        }
+        /* Contenedor de búsqueda */
+        .search-container {
+            padding: 10px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .search-container input {
+            padding: 10px;
+            width: 90%;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+        }
+        /* Tarjetas de juegos */
+        .cards {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente si el contenedor tiene más altura */
+    margin: auto;
+    padding: 10px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 250px; /* Ajusta el ancho según sea necesario */
+    max-width: 90%; /* Asegura que sea responsivo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+}
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+        .card h2 {
+            font-size: 18px;
+            color: #333;
+        }
+        .card h3 {
+            font-size: 16px;
+            color: #555;
+        }
+        .card p {
+            font-size: 13px;
+            color: #777;
+        }
+        .card button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Menú inferior */
+        .footer-menu {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer-menu div {
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .footer-menu div i {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div style="display: flex; align-items: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/10627/10627206.png" alt="Logo">
+            <h1>VENDEDORES VERIFICADOS</h1>
+        </div>
+    </header>
+
+    <!-- Tarjetas de juegos -->
+    <div class="cards">
+    <div class="card">
+        <img src="https://i.ibb.co/xgQq6Nx/IMG-20241107-192920-830.jpg" alt="Angry Birds 2">
+        <h2>Nombre: Mario</h2>
+        <h3>💎 Vendedor 100% confiable</h3>
+        <p>Todos los vendedores que verás en nuestra página han tenido que pasar por una verificación de documento de identidad para garantizar que todos los tratos y negocios sean completamente seguros</p>
+        <p>KYC</p>
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/003/355/389/small/five-5-star-rank-sign-illustration-free-vector.jpg" alt="Estrellas" style="width: 80px; margin: 0px auto;">
+        <button onclick="window.location.href='https://wa.me//+237689545903'">Escribirle al vendedor</button>
+    </div>
+</div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.querySelector(".search-container input");
+        const cards = document.querySelectorAll(".card");
+
+        searchInput.addEventListener("input", function() {
+            const searchText = searchInput.value.toLowerCase();
+            cards.forEach(card => {
+                const title = card.querySelector("h2").textContent.toLowerCase();
+                card.style.display = title.includes(searchText) ? "block" : "none";
+            });
+        });
+    });
+
+    function openSection(section) {
+        // Lógica para cambiar de sección. Puedes ajustar cada sección según tu necesidad.
+        if (section === 'juegos') {
+            window.location.href = 'index.html'; // Redirige a juegos.html
+        } else if (section === 'aplicaciones') {
+            window.location.href = 'aplicaciones.html'; // Redirige a aplicaciones.html
+        } else if (section === 'telegram') {
+            window.location.href = 'https://t.me/ApkAndroideHacking'; // Enlace a Telegram
+        }
+    }
+    </script>
+
+</body>
+</html>
