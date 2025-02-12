@@ -54,8 +54,134 @@
             border-radius: 10px;
             cursor: pointer;
             text-decoration: none;
+         }
+        /* Contenedor de búsqueda */
+        .search-container {
+            padding: 10px;
+            background-color: #87ddfa;
+            text-align: center;
         }
-    </style>
+        .search-container input {
+            padding: 10px;
+            width: 85%;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+        }
+        /* Tarjetas de juegos */
+        .cards {
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: flex-start;
+           max-width: 1000px; /* Puedes ajustar este ancho según tu diseño */
+           margin: 0 auto; /* Centra el contenedor */
+           padding: 10px;
+           gap: 10px;
+        }
+
+        .card {
+           background-color: #fff;
+           border: 1px solid #ddd;
+           border-radius: 5px;
+           width: calc(42% - 10px);
+           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+           padding: 15px;
+           text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+        .card h2 {
+            font-size: 14px;
+            color: #333;
+        }
+        .card h3 {
+            font-size: 13px;
+            color: #555;
+        }
+        .card p {
+            font-size: 12px;
+            color: #777;
+        }
+        .card button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    .reasons {
+        margin-top: 40px;
+        text-align: left;
+        padding-left: 20px;
+        font-size: 1.2em;
+    }
+    .container-reasons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 20px;
+    }
+    .reason {
+        background-color: #0f072b;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 20px;
+        border: 2px solid #ffffff;
+        width: 90%;
+        max-width: 1200px;
+        color: #fff;
+    }
+    .reason-title {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+    .reason-subtitle {
+        font-size: 1em;
+        color: #ccc;
+    }
+    .icon {
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+    }
+    /* Estilos para Preguntas Frecuentes */
+.faq-container {
+    margin: 20px;
+    padding: 20px;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.faq-answer {
+    padding: 15px;
+    background-color: #222;
+    color: #ccc;
+    display: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+</style>
 </head>
 <body>
 
