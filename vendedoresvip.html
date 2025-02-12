@@ -213,5 +213,45 @@
         <button onclick="window.location.href='manuelvendedoresvip.html'">Más información</button>
     </div>
 
+<script>
+     document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.querySelector(".search-container input");
+        const cards = document.querySelectorAll(".card");
+
+        searchInput.addEventListener("input", function() {
+            const searchText = searchInput.value.toLowerCase();
+            cards.forEach(card => {
+                const title = card.querySelector("h2").textContent.toLowerCase();
+                card.style.display = title.includes(searchText) ? "block" : "none";
+            });
+        });
+    });
+    
+    function goToPeliculas() {
+        window.location.href = 'https://wa.me//+573166059302';
+    }
+
+    function goToServicios() {
+        window.location.href = 'vendedoresvip.html';
+    }
+
+// Función para manejar el acordeón
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach((question) => {
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+
+        // Alternar la visibilidad de la respuesta
+        if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+        } else {
+            answer.style.display = 'block';
+        }
+    });
+});
+</script>
+
 </body>
 </html>
+
